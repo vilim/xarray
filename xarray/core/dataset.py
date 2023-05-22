@@ -4803,7 +4803,7 @@ class Dataset(
         for name, var in self.variables.items():
             if name not in index_vars:
                 if dim in var.dims:
-                    if isinstance(fill_value, Mapping):
+                    if isinstance(fill_value, Mapping) and name in fill_value.keys():
                         fill_value_ = fill_value[name]
                     else:
                         fill_value_ = fill_value
